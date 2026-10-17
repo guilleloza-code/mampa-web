@@ -8,68 +8,170 @@
 
 <style>
 
-body{
+*{
     margin:0;
-    font-family:Arial, sans-serif;
-    color:#333;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    color:#2E3A46;
+    background:#fff;
+    line-height:1.7;
 }
 
 .hero{
+    background:linear-gradient(135deg,#EAF3FD 0%,#ECF8F1 100%);
     text-align:center;
     padding:80px 20px;
-    background:#f8fafc;
 }
 
 .logo{
-    max-width:350px;
+    width:320px;
+    max-width:90%;
     margin-bottom:30px;
 }
 
 h1{
-    font-size:48px;
+    font-size:3rem;
     margin-bottom:20px;
 }
 
-.hero p{
-    font-size:22px;
+.subtitle{
     max-width:800px;
     margin:auto;
+    font-size:1.2rem;
+    color:#4F5F70;
 }
 
 .btn{
     display:inline-block;
-    margin-top:30px;
-    padding:15px 30px;
-    background:#0d6efd;
+    margin-top:35px;
+    background:#6FB98F;
     color:white;
     text-decoration:none;
-    border-radius:8px;
+    padding:15px 35px;
+    border-radius:10px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#56a377;
 }
 
 .section{
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
-    padding:70px 20px;
+    padding:80px 20px;
+}
+
+.section-light{
+    background:#F8FBFE;
+}
+
+h2{
+    margin-bottom:25px;
+    color:#4F86C6;
+    border-left:5px solid #6FB98F;
+    padding-left:15px;
 }
 
 .cards{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
 .card{
-    flex:1;
-    min-width:220px;
-    border:1px solid #ddd;
-    padding:25px;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    border-top:4px solid #6FB98F;
+    box-shadow:0 8px 20px rgba(0,0,0,0.05);
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.partners-box{
+    text-align:center;
+    margin-top:30px;
+}
+
+.partners-btn{
+    background:#4F86C6;
+    color:white;
+    border:none;
+    padding:15px 35px;
     border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.partners-btn:hover{
+    background:#3D71AE;
+}
+
+.partners-menu{
+    display:none;
+    margin-top:20px;
+}
+
+.partners-menu a{
+    display:block;
+    width:260px;
+    margin:12px auto;
+    padding:14px;
+    text-decoration:none;
+    color:#2E3A46;
+    background:#E5F5EB;
+    border-radius:10px;
+    border:1px solid #CFE9DA;
+    transition:0.3s;
+}
+
+.partners-menu a:hover{
+    background:#D8F0E3;
+}
+
+.quote{
+    background:#EAF6EF;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.quote p{
+    max-width:850px;
+    margin:auto;
+    font-size:1.3rem;
+    font-style:italic;
 }
 
 footer{
+    background:#F5F8FB;
     text-align:center;
-    padding:40px;
-    background:#f5f5f5;
+    padding:50px 20px;
+}
+
+footer h3{
+    color:#4F86C6;
+    margin-bottom:10px;
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:2.2rem;
+    }
+
+    .subtitle{
+        font-size:1rem;
+    }
+
 }
 
 </style>
@@ -79,16 +181,15 @@ footer{
 
 <section class="hero">
 
-<img src="LogoMampa.jpg" class="logo">
+<img src="LogoMampa.jpg" alt="MAMPA" class="logo">
 
 <h1>Transformamos información en valor estratégico</h1>
 
-<p>
-Ayudamos a organizaciones a optimizar recursos,
-mejorar su rentabilidad y tomar decisiones basadas en datos.
+<p class="subtitle">
+Ayudamos a organizaciones a optimizar recursos, mejorar su rentabilidad y tomar decisiones basadas en datos.
 </p>
 
-<a class="btn" href="#">
+<a href="mailto:contacto@mampa.com.ar" class="btn">
 Solicitar una consulta
 </a>
 
@@ -96,60 +197,7 @@ Solicitar una consulta
 
 <section class="section">
 
-<h2>Servicios</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Consultoría Financiera</h3>
-<p>Soluciones estratégicas para una mejor toma de decisiones.</p>
-</div>
-
-<div class="card">
-<h3>Business Intelligence</h3>
-<p>Dashboards e indicadores para monitorear el negocio.</p>
-</div>
-
-<div class="card">
-<h3>Gestión de Datos</h3>
-<p>Transformamos datos en información útil y accionable.</p>
-</div>
-
-<div class="card">
-<h3>Automatización</h3>
-<p>Optimización de procesos mediante tecnología.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2>Misión</h2>
+<h2>Quiénes Somos</h2>
 
 <p>
-Proveer soluciones financieras estratégicas y servicios de gestión de datos personalizados, ayudando a nuestros partners estratégicos a optimizar sus recursos, tomar decisiones informadas y mejorar su rentabilidad mediante un enfoque basado en datos, innovación y excelencia operativa.
-</p>
-
-</section>
-
-<section class="section">
-
-<h2>Visión</h2>
-
-<p>
-Ser el partner estratégico de referencia en consultoría financiera y gestión de datos, reconocido por transformar información en valor tangible para las organizaciones, impulsando su crecimiento sostenible y fortaleciendo su competitividad.
-</p>
-
-</section>
-
-<footer>
-
-<p><strong>MAMPA</strong></p>
-
-<p>Consultoría Financiera y Gestión de Datos</p>
-
-</footer>
-
-</
+En MAMPA combinamos consultoría financiera, gestión de datos y tecnología para ayudar a nuestros 
