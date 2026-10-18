@@ -1,1 +1,177 @@
 
+You said:
+
+Copilot said:
+¡Excelente! 🚀
+
+Entonces te falta un único paso para evitar la página de cierre de Formspree.
+
+Dentro de tu formulario, justo después de:
+
+
+
+
+agrega esta línea:
+
+
+
+
+Debería quedar así:
+
+
+
+
+Luego:
+
+Commit changes en GitHub.
+Espera que Vercel redespliegue.
+Haz una prueba enviando el formulario.
+El flujo debería ser:
+
+
+
+Solicitar contacto
+       ↓
+Completa formulario
+       ↓
+Enviar
+       ↓
+Recibes el mail
+       ↓
+gracias.html
+Sin mostrar la página de Formspree.
+
+💡 Cuando conectes definitivamente mampa.com.ar, cambia la URL por:
+
+
+
+
+para que todo quede bajo tu dominio corporativo.
+
+
+
+
+
+You said:
+
+Copilot said:
+Tienes que ponerlo dentro del formulario, justo debajo de la línea que empieza con form action.
+
+Busca en tu index.html esto:
+
+
+
+
+<form action="https://formspree.io/f/meaedzan"
+      method="POST">
+Y conviértelo en esto:
+
+
+
+
+<form action="https://formspree.io/f/meaedzan"
+      method="POST">
+ 
+    <input
+        type="hidden"
+        name="_redirect"
+        value="https://mampa-g5z2o93x3-mampa.vercel.app/gracias.html">
+ 
+    <input type="text" name="nombre" placeholder="Nombre" required>
+ 
+    <input type="text" name="apellido" placeholder="Apellido" required>
+ 
+    <input type="tel" name="telefono" placeholder="Teléfono" required>
+ 
+    <input type="email" name="email" placeholder="Email" required>
+ 
+    ...
+👉 La clave es que el input hidden debe ir inmediatamente después de la etiqueta <form>.
+
+Visualmente:
+
+
+
+
+Después guarda con Commit changes, espera que Vercel publique la nueva versión y prueba enviando otra consulta. Si sigue apareciendo la página de Formspree, te ayudo a configurar el redireccionamiento correcto. 🚀
+
+
+
+
+
+You said:
+
+Copilot said:
+En gracias.html puedes poner una página sencilla y profesional. Copia y pega todo esto:
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias | MAMPA</title>
+ 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1020;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 80px 20px;
+        }
+ 
+        .container {
+            max-width: 700px;
+            margin: auto;
+        }
+ 
+        h1 {
+            color: #4f8cff;
+            margin-bottom: 20px;
+        }
+ 
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+ 
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 28px;
+            background: #4f8cff;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+ 
+        .btn:hover {
+            background: #3b74dd;
+        }
+    </style>
+</head>
+<body>
+ 
+    <div class="container">
+        <h1>¡Gracias por contactarnos!</h1>
+ 
+        <p>
+            Hemos recibido su consulta correctamente.
+        </p>
+ 
+        <p>
+            Un miembro del equipo de MAMPA se pondrá en contacto con usted a la mayor brevedad.
+        </p>
+ 
+        <a href="/" class="btn">
+            Volver al inicio
+        </a>
+    </div>
+ 
+</body>
+</html>
