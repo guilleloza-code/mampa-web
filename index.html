@@ -17,50 +17,6 @@
 }
 
 
-<script>
-document.getElementById("contactForm").addEventListener("submit", async function(e) {
-
-    e.preventDefault();
-
-    const form = e.target;
-    const data = new FormData(form);
-
-    try {
-
-        const response = await fetch(
-            "https://formspree.io/f/meaedzan",
-            {
-                method: "POST",
-                body: data,
-                headers: {
-                    "Accept": "application/json"
-                }
-            }
-        );
-
-        if (response.ok) {
-
-            /*alert("¡Gracias por contactarnos!");*/
-                        alert("¡Llego hasta acá!");
-
-            form.reset();
-
-            document.getElementById("modalContacto").style.display = "none";
-
-        } else {
-
-            alert("No fue posible enviar la consulta.");
-
-        }
-
-    } catch(error) {
-
-        alert("Error de conexión.");
-
-    }
-
-});
-</script>
     
 body{
     font-family:'Segoe UI',sans-serif;
@@ -585,7 +541,52 @@ footer h3{
     <p>© 2026 MAMPA. Todos los derechos reservados.</p>
 
 </footer>
-    
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    try {
+
+        const response = await fetch(
+            "https://formspree.io/f/meaedzan",
+            {
+                method: "POST",
+                body: data,
+                headers: {
+                    "Accept": "application/json"
+                }
+            }
+        );
+
+        if (response.ok) {
+
+            /*alert("¡Gracias por contactarnos!");*/
+                        alert("¡Llego hasta acá!");
+
+            form.reset();
+
+            document.getElementById("modalContacto").style.display = "none";
+
+        } else {
+
+            alert("No fue posible enviar la consulta.");
+
+        }
+
+    } catch(error) {
+
+        alert("Error de conexión.");
+
+    }
+
+});
+</script>
+
 <script>
 
 function togglePartners() {
