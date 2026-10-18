@@ -40,7 +40,8 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
         if (response.ok) {
 
-            alert("¡Gracias por contactarnos!");
+            /*alert("¡Gracias por contactarnos!");*/
+                        alert("¡Llego hasta acá!");
 
             form.reset();
 
@@ -336,7 +337,7 @@ footer h3{
 
         <h2>Solicitar contacto</h2>
 
-        <form action="https://formspree.io/f/meaedzan"method="POST">
+        <form id="contactForm">
             
             <input type="text"
                    name="nombre"
